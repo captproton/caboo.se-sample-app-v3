@@ -1,0 +1,15 @@
+
+    <p><label for="login">Login</label>
+    <%= form.text_field :login %></p>
+
+    <p><label for="email">Email</label>
+    <%= form.text_field :email %></p>
+
+    <p><label for="password">Password</label>
+    <%= form.password_field :password %></p>
+
+    <p><label for="password_confirmation">Confirm Password</label>
+    <%= form.password_field :password_confirmation %></p>
+
+    <p><label for="user_time_zone">Default timezone</label>
+    <%= time_zone_select 'user', 'time_zone', TZInfo::Timezone.all.sort, :model => TZInfo::Timezone %></p>

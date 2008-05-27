@@ -1,0 +1,56 @@
+<h1>Editing asset</h1>
+<%= error_messages_for :asset %>
+
+<% form_for(:asset, :url => asset_path(@asset), :html => { :method => :put }) do |f| %>
+  <p>
+    <b>Filename</b><br />
+    <%= f.text_field :filename %>
+  </p>
+
+  <p>
+    <b>Width</b><br />
+    <%= f.text_field :width %>
+  </p>
+
+  <p>
+    <b>Height</b><br />
+    <%= f.text_field :height %>
+  </p>
+
+  <p>
+    <b>Content type</b><br />
+    <%= f.text_field :content_type %>
+  </p>
+
+  <p>
+    <b>Size</b><br />
+    <%= f.text_field :size %>
+  </p>
+
+  <p>
+    <b>Attachable type</b><br />
+    <%= f.text_field :attachable_type %>
+  </p>
+
+  <p>
+    <b>Attachable</b><br />
+    <%= f.text_field :attachable_id %>
+  </p>
+
+  <p>
+    <b>Updated at</b><br />
+    <%= f.datetime_select :updated_at %>
+  </p>
+
+  <p>
+    <b>Created at</b><br />
+    <%= f.datetime_select :created_at %>
+  </p>
+
+  <p>
+    <%= submit_tag "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', asset_path(@asset) %> |
+<%= link_to 'Back', assets_path() %>

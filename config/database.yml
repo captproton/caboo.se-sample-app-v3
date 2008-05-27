@@ -1,0 +1,18 @@
+login: &login
+  adapter: mysql
+  host: localhost
+  username: carlbtan_carlb
+  password: melorbode
+
+development:
+  database: development
+  <<: *login
+
+test:
+  database: test
+  <<: *login
+
+production:
+  database: production
+  <<: *login
+

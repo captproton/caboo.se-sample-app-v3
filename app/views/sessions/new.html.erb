@@ -1,0 +1,34 @@
+<style type="text/css">
+form {
+  width: 49%;
+  float: left;
+}
+</style>
+
+  <% form_tag(sessions_path) do -%>
+    <h2>Login</h2>
+    <p><label for="login">Login</label>
+    <%= text_field_tag 'login' %></p>
+
+    <p><label for="password">Password</label>
+    <%= password_field_tag 'password' %></p>
+
+    <!-- Uncomment this if you want this functionality
+    <p><label for="remember_me">Remember me:</label>
+    <%= check_box_tag 'remember_me' %></p>
+    -->
+
+    <p><%= submit_tag 'Log in' %></p>
+
+  <% end -%>
+  
+  <% form_for :user, :url => users_path do |f| -%>
+
+    <h2>Sign up</h2>
+
+    <%= f.error_messages %>
+    
+    <%= render :partial => 'users/form', :object => f %>
+    <p><%= submit_tag 'Sign up' %></p>
+
+  <% end #form_for -%>

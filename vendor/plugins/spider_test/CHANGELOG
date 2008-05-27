@@ -1,0 +1,7 @@
+Fixed: Page anchors not showing properly.
+Fixed: Workaround for shitty rails integration tests not liking :put
+Fixed: better error messages
+Added: Show form errors at the end
+Added: Show errors at the end
+
+Release
