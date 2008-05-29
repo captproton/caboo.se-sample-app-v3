@@ -1,6 +1,6 @@
 .DS_Store
-tmp
-log
+tmp/**/*
+log/*.log
 config/amazon_s3.yml
 config/database.yml
 vendor/rails
@@ -8,3 +8,5 @@ db/*.sqlite
 db/*.sqlite2
 db/*.sqlite3
 db/*.db
+doc/api
+doc/app
