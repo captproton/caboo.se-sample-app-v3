@@ -25,7 +25,7 @@ describe "/assets/show.html.erb" do
     # that resource_fu creates which are defined in the controller and exposed to
     # views with helper_method().  We set expectations for calls to those helpers
     # but don't bother wiring them up - they will be tested in helper tests.
-    @controller.template.should_receive(:assets_path).with().and_return('ASSETS_PATH')
+    @controller.template.should_receive(:user_assets_path).with().and_return('ASSETS_PATH')
     @controller.template.should_receive(:edit_user_asset_path).with(@asset).and_return('EDIT_ASSET_PATH')
   end
 

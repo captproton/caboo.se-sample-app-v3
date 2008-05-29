@@ -34,11 +34,11 @@ describe "/assets/index.html.erb" do
     # that resource_fu creates which are defined in the controller and exposed to
     # views with helper_method().  We set expectations for calls to those helpers
     # but don't bother wiring them up - they will be tested in helper tests.
-    @controller.template.should_receive(:asset_path).with(asset_98).exactly(2).times.and_return('ASSET_98_PATH')
-    @controller.template.should_receive(:asset_path).with(asset_99).exactly(2).times.and_return('ASSET_99_PATH')
-    @controller.template.should_receive(:edit_asset_path).with(asset_98).and_return('EDIT_ASSET_98_PATH')
-    @controller.template.should_receive(:edit_asset_path).with(asset_99).times.and_return('EDIT_ASSET_99_PATH')
-    @controller.template.should_receive(:new_asset_path).with().times.and_return('NEW_ASSET_PATH')
+    @controller.template.should_receive(:user_asset_path).with(asset_98).exactly(2).times.and_return('ASSET_98_PATH')
+    @controller.template.should_receive(:user_asset_path).with(asset_99).exactly(2).times.and_return('ASSET_99_PATH')
+    @controller.template.should_receive(:edit_user_asset_path).with(asset_98).and_return('EDIT_ASSET_98_PATH')
+    @controller.template.should_receive(:edit_user_asset_path).with(asset_99).times.and_return('EDIT_ASSET_99_PATH')
+    @controller.template.should_receive(:new_user_asset_path).with().times.and_return('NEW_ASSET_PATH')
     @controller.template.should_receive(:asset_attachable_path).with(@user).times.and_return('NEW_ASSET_PATH')
     
   end
