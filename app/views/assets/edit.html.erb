@@ -1,7 +1,7 @@
 <h1>Editing asset</h1>
 <%= error_messages_for :asset %>
 
-<% form_for(:asset, :url => asset_path(@asset), :html => { :method => :put }) do |f| %>
+<% form_for(:asset, :url => user_asset_path(@asset), :html => { :method => :put }) do |f| %>
   <p>
     <b>Filename</b><br />
     <%= f.text_field :filename %>
@@ -52,5 +52,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', asset_path(@asset) %> |
-<%= link_to 'Back', assets_path() %>
+<%= link_to 'Show', user_asset_path(@asset) %> |
+<%= link_to 'Back', user_assets_path() %>

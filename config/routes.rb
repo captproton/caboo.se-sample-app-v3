@@ -7,9 +7,10 @@ ActionController::Routing::Routes.draw do |map|
     # 'attachable'.  
     # We use the resource_fu :opaque_name option so that the
     # url looks clean independent of url helper and route names.
+    ##user.resources :user_assets, :opaque_name => :assets
     user.resources :user_assets, :opaque_name => :assets
   end
-  
+  ## map.resources :users,    :has_many   => [:assets]
   map.connect ':controller/service.wsdl', :action => 'wsdl'
   map.connect '', :controller => 'users'
 

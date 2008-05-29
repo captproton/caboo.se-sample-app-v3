@@ -19,11 +19,17 @@ require 'open-uri'
 class Asset < ActiveRecord::Base
   belongs_to :attachable, :polymorphic => true
 
+##  has_attachment :storage => :file_system, 
+##    :thumbnails => { :polaroid => '193x', :thumb => '120>', :tiny => '50>' }, 
+##    :max_size => 5.megabytes,
+##    :path_prefix => "public/image_assets"
+
   has_attachment :storage => :file_system, 
-    :thumbnails => { :polaroid => '193x', :thumb => '120>', :tiny => '50>' }, 
+    :thumbnails => { :polaroid => '193', :thumb => '120', :tiny => '50' }, 
     :max_size => 5.megabytes,
     :path_prefix => "public/image_assets"
 
+        
   def url=(url)
     return unless url =~ /^http:\/\//
     open url do |file|
