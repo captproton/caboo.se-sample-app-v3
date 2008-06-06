@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   include AuthenticatedSystem
   include ExceptionNotifiable
 
+  before_filter :set_user_time_zone
+  
   class AccessDenied < StandardError; end
 
   # Pick a unique cookie name to distinguish our session data from others'
@@ -24,9 +26,9 @@ class ApplicationController < ActionController::Base
   private
 
     def set_timezone
-      TzTime.zone = logged_in? ? current_user.tz : TimeZone.new('Etc/UTC')
+      Time.zone = logged_in? ? current_user.time_zone : TimeZone.new('Etc/UTC')
         yield
-      TzTime.reset!
+      Time.reset!
     end
 
     def catch_errors
