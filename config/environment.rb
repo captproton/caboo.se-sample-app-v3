@@ -33,6 +33,8 @@ Rails::Initializer.run do |config|
     :session_key => '_restful_auth_rspec_session',
     :secret      => '62a9f27912d6522beff9f364438209e0'
   }
+  # config/environment.rb -- turn on time zone default
+  config.time_zone = 'Pacific Time (US & Canada)'
 
   # Use the database for sessions instead of the cookie-based default,
   # which shouldn't be used to store highly confidential information

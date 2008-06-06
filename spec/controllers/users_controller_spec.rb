@@ -196,7 +196,7 @@ describe "Requesting /users/1/edit using GET" do
   controller_name :users
 
   before(:each) do
-    @user = mock_model(User, :tz => nil)
+    ## outdated with rails 2.1 @user = mock_model(User, :tz => nil)
     User.stub!(:find_by_param).and_return(@user)
     controller.stub!(:current_user).and_return @user
   end
@@ -259,7 +259,7 @@ describe "Requesting /users/1 using PUT" do
   controller_name :users
 
   before(:each) do
-    @user = mock_model(User, :to_param => "1", :update_attributes => true, :tz => nil)
+    ## outdate with rails 2.1 ## @user = mock_model(User, :to_param => "1", :update_attributes => true, :tz => nil)
     User.stub!(:find_by_param).and_return(@user)
     
     controller.stub!(:current_user).and_return(@user)
@@ -296,7 +296,7 @@ describe "Requesting /users/1 using DELETE" do
   controller_name :users
 
   before(:each) do
-    @user = mock_model(User, :destroy => true, :tz => nil)
+    ## outdate with rails 2.1 ## @user = mock_model(User, :destroy => true, :tz => nil)
     User.stub!(:find_by_param).and_return(@user)
     controller.stub!(:current_user).and_return @user
   end

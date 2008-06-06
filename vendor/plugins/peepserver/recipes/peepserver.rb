@@ -133,7 +133,7 @@ namespace :peepcode do
     desc "Install gems needed by PeepCode"
     task :special_gems do
       # TODO hpricot
-      %w(libxml-ruby gruff sparklines ar_mailer bong production_log_analyzer tzinfo rspec).each do |gemname|
+      %w(libxml-ruby gruff sparklines ar_mailer bong production_log_analyzer rspec).each do |gemname|
         sudo "gem install #{gemname} -y"
       end
     end

@@ -3,7 +3,7 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
 require 'spec/rails'
-require 'tzinfo'
+## outdate with rails 2.1 ## require 'tzinfo'
 
 require 'rspec_extensions' # custom in lib/
 
@@ -28,7 +28,7 @@ Spec::Runner.configure do |config|
   def mock_user
     user = mock_model(User, 
       :id => 1, 
-      :tz => TimeZone.new('USA/PDT'),
+      ## outdate with rails 2.1 ## :tz => TimeZone.new('USA/PDT'),
       :login => 'flappy',
       :email => 'flappy@email.com',
       :password => '', :password_confirmation => '',

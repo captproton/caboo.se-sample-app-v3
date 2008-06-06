@@ -31,7 +31,7 @@ INSTALL:
         gem update --system
         gem update rails
 
-    Install a few required gems: tzinfo, tztime, rspec
+    Install a few required gems: tzinfo, tztime, rspec  -- tzinfo and tztime may not be needed with rails 2.1
     Create config/database.yml; if you don't know how to do this, then you probably won't learn anything from this app.
     Import the database with rake db:migrate
     

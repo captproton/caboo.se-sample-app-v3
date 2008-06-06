@@ -5,8 +5,6 @@ class ApplicationController < ActionController::Base
   include AuthenticatedSystem
   include ExceptionNotifiable
 
-  before_filter :set_user_time_zone
-  
   class AccessDenied < StandardError; end
 
   # Pick a unique cookie name to distinguish our session data from others'
@@ -15,7 +13,7 @@ class ApplicationController < ActionController::Base
   # If you want timezones per-user, uncomment this:
   before_filter :login_required
 
-  around_filter :set_user_time_zone
+  before_filter :set_timezone
   around_filter :catch_errors
   
   protected
@@ -25,10 +23,8 @@ class ApplicationController < ActionController::Base
 
   private
 
-    def set_user_time_zone
-      Time.zone = logged_in? ? current_user.time_zone : TimeZone.new('Etc/UTC')
-        yield
-      Time.reset!
+    def set_timezone
+      Time.zone = current_user.time_zone if logged_in?
     end
 
     def catch_errors
