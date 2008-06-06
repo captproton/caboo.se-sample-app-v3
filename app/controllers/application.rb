@@ -13,9 +13,9 @@ class ApplicationController < ActionController::Base
   session :session_key => '_restful_auth_rspec_session_id'
 
   # If you want timezones per-user, uncomment this:
-  #before_filter :login_required
+  before_filter :login_required
 
-  around_filter :set_timezone
+  around_filter :set_user_time_zone
   around_filter :catch_errors
   
   protected
@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-    def set_timezone
+    def set_user_time_zone
       Time.zone = logged_in? ? current_user.time_zone : TimeZone.new('Etc/UTC')
         yield
       Time.reset!
