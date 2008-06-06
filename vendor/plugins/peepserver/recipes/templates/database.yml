@@ -1,0 +1,7 @@
+production:
+  adapter: mysql
+  encoding: utf8
+  database: demo_prod
+  username: deploy
+  password: Iwe2thst4ju!
+  socket:  /var/run/mysqld/mysqld.sock
